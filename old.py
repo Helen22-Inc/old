@@ -5,9 +5,12 @@ import inspect
 import datetime
 import random
 import pymongo
+import os
 
 client = commands.Bot(command_prefix = ".")
 client.remove_command("help")
+
+tt = os.environ.get("TOKEN")
 
 @client.command()
 async def se(message, kuda = None, otkuda_channel = None, otkuda_msg = None, txt_channel = None, txt_msg = None):
@@ -66,4 +69,4 @@ async def ee(message, channel_edit = None, channel_msg = None, otkuda_channel = 
         await msg.edit(embed=embed)
 
 
-client.run('NzQyMDA4MDA4MTY2MzQyNzA3.Xy_2zg.jc2gsmBFSwVwb3yKg501sMfmefM')
+client.run(tt)
