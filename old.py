@@ -88,5 +88,34 @@ async def ev(message,*command):
       await message.channel.send('```py\n' + str(await res) + '```')
     else:
       await message.channel.send('```py\n' + str(res) + '```')
+    
+@client.command()
+async def server(message):
+    gg = client.get_guild(711118908081569793)
+    embed = discord.Embed(title = gg.name, colour = message.author.colour, timestamp = datetime.datetime.utcnow())
+    embed.add_field(name='Эмодзи', value=len(gg.emojis))
+    embed.add_field(name='Владелец', value=str(gg.owner.mention))
+    embed.add_field(name='Уровень верификации', value=gg.verification_level)
+    embed.add_field(name='Текстовых каналов', value=len(gg.text_channels))
+    embed.add_field(name='Голосовых каналов', value=len(gg.voice_channels))
+    embed.add_field(name='Категорий', value=len(gg.categories))
+    embed.add_field(name='<:offline:743187158398926989> Участников', value=gg.member_count)
+    k = 0
+    for i in gg.members:
+        if str(i.status) != 'offline':
+            k += 1
+    embed.add_field(name='<:online:743187158205988925> Участников онлайн', value=k)
+    k = 0
+    for i in gg.roles:
+        if i.permissions.administrator:
+            k += 1
+    embed.add_field(name='Ролей администрации', value=k)
+    embed.add_field(name='<:boost:743181892718821476> Бустов', value=gg.premium_subscription_count)
+    embed.add_field(name='Дата создания', value=str(gg.created_at).split('.')[0], inline=False)
+    embed.add_field(name='឵឵឵', value=f'**[{gg.name}](https://discord.gg/pRyYNPE)**')
+
+    embed.set_thumbnail(url=gg.icon_url)
+    embed.set_footer(text='Пожилые человеки ^^', icon_url=message.author.avatar_url)
+    await message.channel.send(embed=embed)
 
 client.run(tt)
