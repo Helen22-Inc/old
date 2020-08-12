@@ -7,7 +7,7 @@ import random
 import pymongo
 import os
 
-client = commands.Bot(command_prefix = ".")
+client = commands.Bot(command_prefix = "'")
 client.remove_command("help")
 
 tt = os.environ.get("TOKEN")
