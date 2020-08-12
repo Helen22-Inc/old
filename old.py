@@ -110,7 +110,7 @@ async def server(message):
         if i.permissions.administrator:
             k += 1
     embed.add_field(name='Ролей администрации', value=k)
-    embed.add_field(name='<:boost:648088887079600148> Бустов', value=gg.premium_subscription_count)
+    embed.add_field(name='<:boost:648088887079600148>  Бустов', value=gg.premium_subscription_count)
     embed.add_field(name='Дата создания', value=str(gg.created_at).split('.')[0], inline=False)
     embed.add_field(name='឵឵឵', value=f'**[{gg.name}](https://discord.gg/pRyYNPE)**')
 
