@@ -35,7 +35,10 @@ async def se(message, kuda = None, otkuda_channel = None, otkuda_msg = None, txt
                 embed.set_thumbnail(url=b[1][1::])
             if b[0] == 'footer':
                 b = b[1][1::].split('=>')
-                embed.set_footer(text=b[0], icon_url=b[1])
+                try:
+                    embed.set_footer(text=b[0], icon_url=b[1])
+                except:
+                    embed.set_footer(text=b[0])
             if b[0] == 'image':
                 embed.set_image(url=b[1][1::])
 
