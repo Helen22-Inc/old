@@ -28,7 +28,7 @@ async def se(message, kuda = None, otkuda_channel = None, otkuda_msg = None, txt
                 color = b[1][1::]
             if b[0] == 'title':
                 title = b[1][1::]
-        embed = discord.Embed(title = title, timestamp = datetime.datetime.utcnow(), description = description.content, colour = discord.Colour(int(color,16)))
+        embed = discord.Embed(title = title, description = description.content, colour = discord.Colour(int(color,16)))
         for i in a.content.split('\n'):
             b = i.split(':::')
             if b[0] == 'thumbnail':
@@ -58,7 +58,7 @@ async def ee(message, channel_edit = None, channel_msg = None, otkuda_channel = 
                 color = b[1][1::]
             if b[0] == 'title':
                 title = b[1][1::]
-        embed = discord.Embed(title = title, timestamp = datetime.datetime.utcnow(), description = description.content, colour = discord.Colour(int(color,16)))
+        embed = discord.Embed(title = title, description = description.content, colour = discord.Colour(int(color,16)))
         for i in a.content.split('\n'):
             b = i.split(':::')
             if b[0] == 'thumbnail':
@@ -67,6 +67,5 @@ async def ee(message, channel_edit = None, channel_msg = None, otkuda_channel = 
                 b = b[1][1::].split('=>')
                 embed.set_footer(text=b[0], icon_url=b[1])
         await msg.edit(embed=embed)
-
 
 client.run(tt)
