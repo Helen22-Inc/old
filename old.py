@@ -15,7 +15,7 @@ tt = os.environ.get("TOKEN")
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.dnd,activity=discord.Game(f"Грандиозное открытие! | {len(client.get_guild(711118908081569793).members)}"))
+    await client.change_presence(status=discord.Status.dnd,activity=discord.Game(f"Находится в доме престарелых | {len(client.get_guild(711118908081569793).members)}"))
     
 @client.command()
 async def se(message, kuda = None, otkuda_channel = None, otkuda_msg = None, txt_channel = None, txt_msg = None):
