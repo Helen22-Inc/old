@@ -65,7 +65,10 @@ async def ee(message, channel_edit = None, channel_msg = None, otkuda_channel = 
                 embed.set_thumbnail(url=b[1][1::])
             if b[0] == 'footer':
                 b = b[1][1::].split('=>')
-                embed.set_footer(text=b[0], icon_url=b[1])
+                try:
+                    embed.set_footer(text=b[0], icon_url=b[1])
+                except:
+                    embed.set_footer(text=b[0])
         await msg.edit(embed=embed)
 
 client.run(tt)
