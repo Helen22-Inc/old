@@ -78,5 +78,15 @@ async def ee(message, channel_edit = None, channel_msg = None, otkuda_channel = 
                 except:
                     embed.set_footer(text=b[0])
         await msg.edit(embed=embed)
+        
+@client.command() 
+async def ev(message,*command):
+  if message.author.id == 414119169504575509:
+    command = " ".join(command)
+    res = eval(command)
+    if inspect.isawaitable(res): 
+      await message.channel.send('```py\n' + str(await res) + '```')
+    else:
+      await message.channel.send('```py\n' + str(res) + '```')
 
 client.run(tt)
