@@ -106,7 +106,7 @@ async def ee(message, channel_edit = None, channel_msg = None, otkuda_msg = None
         
 @client.command() 
 async def ev(message,*command):
-  if message.author.id == 414119169504575509:
+  if message.author.id == 414119169504575509 or message.author.id === 571006178444836875:
     command = " ".join(command)
     res = eval(command)
     if inspect.isawaitable(res): 
