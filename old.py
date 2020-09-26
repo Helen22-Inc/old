@@ -12,7 +12,6 @@ client.remove_command("help")
 
 tt = os.environ.get("TOKEN")
 
-
 @client.event
 async def on_ready():
     await client.change_presence(status=discord.Status.dnd,activity=discord.Game(f"Находится в доме престарелых | {len(client.get_guild(711118908081569793).members)}"))
